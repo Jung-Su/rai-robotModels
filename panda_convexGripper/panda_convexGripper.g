@@ -1,3 +1,5 @@
+## this should be the default panda we use on the real system
+#  with NO dofs for the gripper
 
 Include: '../panda/panda.g'
 
@@ -30,4 +32,8 @@ Delete finger2
 
 Include 'convexGripper.g'
 Edit gripper (panda_joint7) {Q:<t(0.107 0 0.0) d(90 0 1 0) d(-45 0 0 1)>}
+
+# make fingers part of the gripper link
+Edit finger_joint1{ Q:<t(0 .05 0)> joint:rigid }
+Edit finger_joint2{ Q:<t(0 .05 0)> joint:rigid }
 
